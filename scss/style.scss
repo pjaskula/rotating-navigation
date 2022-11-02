@@ -24,6 +24,19 @@ body {
 
   &.show-nav {
     transform: rotate(-20deg);
+
+    +nav {
+      ul {
+        li {
+          transform: translateX(0);
+          transition-delay: .3s;
+        }    
+      }      
+    }
+
+    .circle {
+      transform: rotate(-70deg);
+    }
   }
 
   .circle-container {
@@ -67,8 +80,59 @@ body {
     }
   }
 
-  img {
-    max-width: 100%;
-  }
+  .content {
+    max-width: 1000px;
+    margin: 60px auto;
 
+    h1 {
+      margin: 0;
+    }
+
+    small {
+      color: #555;
+      font-style: italic;
+    }
+
+    p {
+      color: #333;
+      line-height: 1.5;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+
+  ul {
+    list-style: none;
+    padding: 30px;
+
+    li {
+      text-transform: uppercase;
+      color: #fff;
+      margin-block: 40px;
+      transform: translateX(-200%);
+      transition: transform .4s ease-in;
+
+      i {
+        font-size: 20px;
+        margin-right: 10px;
+      }
+
+      + li {
+        margin-left: 15px;
+        + li {
+          margin-left: 30px;
+        }
+      }
+    }
+    
+  }
 }
